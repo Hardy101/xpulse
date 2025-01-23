@@ -4,7 +4,7 @@
   <div class="px-8 md:px-32">
     <div class="grid md:grid-cols-2 gap-8 auth-body mt-4">
       <form
-        action="{% url 'register' %}"
+        action="{% url 'login' %}"
         method="post"
         class="px-4 poppins-bold my-auto"
       >
@@ -24,13 +24,11 @@
         </div>
         <div class="form-control poppins-medium mb-4">{{form.email}}</div>
         <div class="form-control poppins-medium text-xs mb-4">
-          {% if form.email.errors %}
           <ul class="errorlist">
             {% for error in form.email.errors %}
             <li class="text-red-500 poppins-bold">{{ error }}</li>
             {% endfor %}
           </ul>
-          {% endif %}
         </div>
         <div class="form-control mb-8">
           <button
@@ -45,7 +43,9 @@
         <div class="form-control poppins-regular text-center">
           <p>
             Don't have an account?
-            <a href="{% url 'register' %}" class="text-blue-1 poppins-bold underline"
+            <a
+              href="{% url 'register' %}"
+              class="text-blue-1 poppins-bold underline"
               >Create one</a
             >
           </p>
