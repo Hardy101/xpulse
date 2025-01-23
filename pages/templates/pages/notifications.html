@@ -1,0 +1,173 @@
+{% extends 'pages/base.html' %} {% load static %} {% block title %} Messages
+{%endblock %} {% block section %}
+<section>
+  <div class="py-10 px-8 md:px-32">
+    <div class="followers-header grid poppins-bold">
+      <h1 class="text-2xl font-bold col-span-2">Latest Followers</h1>
+      <span class="text-gray-bold text-xs poppins-regular mt-2"
+        >3 new follwers</span
+      >
+    </div>
+
+    <!-- Followers -->
+    <div class="body mt-8">
+      <ul class="grid md:grid-cols-3 gap-6">
+        <li class="flex gap-4">
+          <img
+            src="{% static 'icons/p-1.jpg' %}"
+            class="w-8 h-8 rounded-full my-auto"
+            alt=""
+          />
+          <div class="grow text-xs grid my-auto">
+            <p class="flex gap-1">
+              <span class="text-sm poppins-bold">Ben Affleck</span>
+              <img
+                src="{% static 'icons/verified.png' %}"
+                class="w-4 my-auto"
+                alt="verified icon"
+              />
+            </p>
+            <p class="flex poppins-medium">
+              <span>@</span>
+              <span class="text-gray-bold">Berkeley California</span>
+            </p>
+
+            <p class="flex gap-1 text-gray-bold poppins-bold">
+              <img
+                src="{% static 'icons/followers.png' %}"
+                class="w-4 my-auto"
+                alt="followers image"
+              />
+              <span class="my-auto">119k</span>
+            </p>
+          </div>
+          <button
+            class="bg-green-100 text-green-500 text-xs rounded-2xl px-4 py-2 my-auto"
+          >
+            <span class="poppins-bold">Follow back</span>
+          </button>
+        </li>
+        <li class="flex gap-4">
+          <img
+            src="{% static 'icons/p-1.jpg' %}"
+            class="w-8 h-8 rounded-full my-auto"
+            alt=""
+          />
+          <div class="grow text-xs grid my-auto">
+            <p class="flex gap-1">
+              <span class="text-sm poppins-bold">Ben Affleck</span>
+              <img
+                src="{% static 'icons/verified.png' %}"
+                class="w-4 my-auto"
+                alt="verified icon"
+              />
+            </p>
+            <p class="flex poppins-medium">
+              <span>@</span>
+              <span class="text-gray-bold">Berkeley California</span>
+            </p>
+
+            <p class="flex gap-1 text-gray-bold poppins-bold">
+              <img
+                src="{% static 'icons/followers.png' %}"
+                class="w-4 my-auto"
+                alt="followers image"
+              />
+              <span class="my-auto">12.5k</span>
+            </p>
+          </div>
+          <button
+            class="bg-green-100 text-green-500 text-xs rounded-2xl px-4 py-2 my-auto"
+          >
+            <span class="poppins-bold">Follow back</span>
+          </button>
+        </li>
+        <li class="flex gap-4">
+          <img
+            src="{% static 'icons/p-1.jpg' %}"
+            class="w-8 h-8 rounded-full my-auto"
+            alt=""
+          />
+          <div class="grow text-xs grid my-auto">
+            <p class="flex gap-1">
+              <span class="text-sm poppins-bold">Tom cruise</span>
+              <img
+                src="{% static 'icons/verified.png' %}"
+                class="w-4 my-auto"
+                alt="verified icon"
+              />
+            </p>
+            <p class="flex poppins-medium">
+              <span>@</span>
+              <span class="text-gray-bold">Robert Downey Jr.</span>
+            </p>
+
+            <p class="flex gap-1 text-gray-bold poppins-bold">
+              <img
+                src="{% static 'icons/followers.png' %}"
+                class="w-4 my-auto"
+                alt="followers image"
+              />
+              <span class="my-auto">1k</span>
+            </p>
+          </div>
+          <button
+            class="bg-green-100 text-green-500 text-xs rounded-2xl px-4 py-2 my-auto"
+          >
+            <span class="poppins-bold">Follow back</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Unfollowers -->
+    <div class="post-header grid poppins-bold mt-16">
+      <h1 class="text-2xl font-bold col-span-2">Latest Unfollowers</h1>
+      <span class="text-gray-bold text-xs poppins-regular mt-2"
+        >1 new unfollower(s)</span
+      >
+    </div>
+
+    <!-- Followers -->
+    <div class="body mt-8">
+      <ul class="grid md:grid-cols-3 gap-6">
+        <li class="flex gap-4">
+          <img
+            src="{% static 'icons/p-1.jpg' %}"
+            class="w-8 h-8 rounded-full my-auto"
+            alt="person"
+          />
+          <div class="grow text-xs grid my-auto">
+            <p class="flex gap-1">
+              <span class="text-sm poppins-bold">Ben Affleck</span>
+              <img
+                src="{% static 'icons/verified.png' %}"
+                class="w-4 my-auto"
+                alt="verified icon"
+              />
+            </p>
+            <p class="flex poppins-medium">
+              <span>@</span>
+              <span class="text-gray-bold">Berkeley California</span>
+            </p>
+
+            <p class="flex gap-1 text-gray-bold poppins-bold">
+              <img
+                src="{% static 'icons/followers.png' %}"
+                class="w-4 my-auto"
+                alt="followers image"
+              />
+              <span class="my-auto">1250</span>
+            </p>
+          </div>
+          <button
+            class="bg-red-100 text-red-500 text-xs rounded-2xl px-4 py-2 my-auto"
+          >
+            <span class="poppins-bold">Unfollow</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

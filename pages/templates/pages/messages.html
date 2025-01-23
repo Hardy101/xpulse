@@ -1,0 +1,49 @@
+{% extends 'pages/base.html' %} {% load static %} {% block title %} Messages
+{%endblock %} {% block section %}
+<section>
+  <div class="py-10 px-8 md:px-32">
+    <div class="post-header grid poppins-bold">
+      <h1 class="text-2xl font-bold col-span-2">Generated Messages</h1>
+      <span class="text-gray-faded text-xs poppins-regular mt-4"
+        >7 new messages</span
+      >
+    </div>
+
+    <!-- Followers -->
+    <div class="body mt-8">
+      <ul class="grid gap-6">
+        <li
+          class="message flex gap-4 h-20 overflow-hidden border rounded-2xl p-3"
+        >
+          <form class="message-content grow text-xs grid my-auto">
+            <span class="text-gray-bold poppins-bold">12/12/2024</span>
+            <span class="text-sm poppins-bold">Ben Affleck</span>
+            <textarea
+              disabled
+              class="h-32 text-gray-bold bg-transparent outline-none overflow-hidden"
+            >
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eum, est optio dolorem voluptates aliquam voluptate molestiae ipsam ad! Praesentium totam nobis molestias quisquam ad sint eum illum voluptates adipisci ut iusto cumque, provident excepturi! Tempora facere atque aliquam in at ad dolore, nulla, earum nihil quis nisi quo error?</textarea
+            >
+            <button type="button" class="copymsg flex mr-auto mt-2">
+              <span
+                class="poppins-bold px-4 py-1 bg-customgreen text-white rounded-2xl"
+                >copy</span
+              >
+            </button>
+          </form>
+          <button class="edit-message-btn text-xs text-blue-1 my-auto">
+            <span class="poppins-bold">edit</span>
+          </button>
+          <a
+            target="_blank"
+            href="https:www.google.com/search?q=x"
+            class="my-auto"
+          >
+            <img src="{% static 'icons/x.png' %}" class="w-6" alt="" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

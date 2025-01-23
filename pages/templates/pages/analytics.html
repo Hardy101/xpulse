@@ -1,0 +1,64 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block title %} Analytics {% endblock %}
+{% block section %}
+<section>
+        <div class="py-10 px-8 md:px-32">
+          <div class="analytics-header grid poppins-bold">
+            <h1 class="text-2xl font-bold col-span-2">Post Analytics</h1>
+            <div
+              class="flex gap-4 text-gray-bold text-xs poppins-medium mt-4 border-b"
+            >
+              <span
+                class="cursor-pointer hover:bg-gray-faded py-3 border-b-2 border-gray-bold poppins-medium text-black"
+                ><span class="poppins-bold">#</span>Tags</span
+              >
+              <span class="cursor-pointer hover:bg-gray-faded py-3"
+                ><span class="poppins-bold">@</span>Mentions</span
+              >
+            </div>
+          </div>
+
+          <div class="posts-body mt-8">
+            <div class="analytics-body-header flex justify-between">
+              <h2 class="text-xl font-bold">Tags you used</h2>
+              <button
+                class="flex gap-2 text-xs bg-[#f5f5f5] px-2 py-1 rounded-md"
+              >
+                <span class="poppins-medium my-auto">in the last 30 days</span
+                ><img
+                  src="{% static 'icons/expand.png' %}"
+                  class="-rotate-3 md:w-4 w-4"
+                  alt="expand icon"
+                />
+              </button>
+            </div>
+
+            <ul class="mt-6 flex flex-wrap gap-4">
+              <li class="flex gap-4 bs-1 p-4 rounded-2xl text-sm">
+                <span class="my-auto">#DevJourneyAccountability </span>
+                <span class="poppins-bold my-auto">2k impressions</span>
+              </li>
+              <li class="flex gap-4 bs-1 p-4 rounded-2xl text-sm">
+                <span class="my-auto">#100DaysofCode </span>
+                <span class="poppins-bold my-auto">27k impressions</span>
+              </li>
+            </ul>
+
+            <h2 class="text-xl font-bold mt-8">
+              Suggested tags for increased reach
+            </h2>
+            <ul class="mt-6 flex flex-wrap gap-4">
+              <li class="flex gap-4 bs-1 p-4 rounded-2xl text-sm">
+                <span class="my-auto">#DevJourneyAccountability </span>
+                <span class="poppins-bold my-auto">2k impressions</span>
+              </li>
+              <li class="flex gap-4 bs-1 p-4 rounded-2xl text-sm">
+                <span class="my-auto">#100DaysofCode </span>
+                <span class="poppins-bold my-auto">27k impressions</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+{% endblock %}

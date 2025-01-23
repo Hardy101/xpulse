@@ -1,0 +1,35 @@
+{% extends 'pages/base.html' %} {% load static %} {% block title %} Schedule
+{%endblock %} {% block section %}
+<section>
+  <div class="py-10 px-8 md:px-32">
+    <div class="posts-body mt-4">
+      <form
+        action="{% url 'home' %}"
+        method="post"
+        class="md:w-1/2 rounded-2xl bs-1 p-4 mx-auto flex flex-col gap-4 poppins-bold"
+      >
+        {% csrf_token %}
+        <div class="analytics-header grid">
+          <img src="{% static 'icons/logo.png' %}" class="w-16" alt="logo" />
+          <h1 class="text-2xl col-span-2 mt-4">Get Started</h1>
+        </div>
+        <div class="form-control poppins-medium">{{form.email}}</div>
+        <div class="form-control poppins-medium">{{form.x_handle}}</div>
+        <div class="form-control">
+          <button
+            disabled="true"
+            id="submitbtn"
+            type="submit"
+            class="w-full rounded-md bg-gray-bold text-white text-xs py-3 px-6 disabled:cursor-not-allowed"
+          >
+            <span class="">Authenticate</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %} {% block script %}
+<script src="{% static 'js/validateForm.js' %}"></script>
+{% endblock %}
