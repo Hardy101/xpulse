@@ -1,17 +1,22 @@
 {% extends 'pages/base.html' %} {% load static %} {% block title %} Schedule
 {%endblock %} {% block section %}
 <section>
-  <div class="py-10 px-8 md:px-32">
-    <div class="posts-body mt-4">
+  <div class="px-8 md:px-32">
+    <div class="grid grid-cols-2 gap-8 auth-body mt-4">
       <form
         action="{% url 'register' %}"
         method="post"
-        class="md:w-1/2 rounded-2xl bs-1 p-4 mx-auto poppins-bold"
+        class="px-4 poppins-bold my-auto"
       >
         {% csrf_token %}
-        <div class="analytics-header grid mb-4">
-          <img src="{% static 'icons/logo.png' %}" class="w-16" alt="logo" />
-          <h1 class="text-2xl col-span-2 mt-4">Get Started</h1>
+        <div class="analytics-header mb-4">
+          <h1 class="mt-4 flex gap-2 text-2xl">
+            <span>Get Started with</span>
+            <p class="flex">
+              <img src="{% static 'icons/logo.png' %}" class="w-8" alt="logo" />
+              <span class="text-blue-1">Pulse</span>
+            </p>
+          </h1>
         </div>
         <div class="form-control poppins-medium mb-4">{{form.email}}</div>
         <div class="form-control poppins-medium text-xs mb-4">
@@ -33,7 +38,7 @@
           </ul>
           {% endif %}
         </div>
-        <div class="form-control">
+        <div class="form-control mb-8">
           <button
             disabled="true"
             id="submitbtn"
@@ -43,7 +48,16 @@
             <span class="">Authenticate</span>
           </button>
         </div>
+        <div class="form-control poppins-regular text-center">
+          <p>
+            Already have an account?
+            <a href="#" class="text-blue-1 poppins-bold underline">Sign In</a>
+          </p>
+        </div>
       </form>
+      <div>
+        <img src="{% static 'icons/manage.jpg' %}" alt="" />
+      </div>
     </div>
   </div>
 </section>
