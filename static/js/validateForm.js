@@ -11,7 +11,8 @@ const validateEmailField = () => {
     Elements.email.classList.add("border-blue-1");
     Elements.email.classList.remove("focus:border-black");
   } else {
-    Elements.email.classList.add("border-blue-1");
+    Elements.email.classList.remove("border-blue-1");
+    Elements.email.classList.add("focus:border-black");
   }
   return isValid;
 };
@@ -22,13 +23,11 @@ const validateXnameField = () => {
   if (isEmpty) {
     xname.classList.add("focus:border-black");
     xname.classList.remove("border-blue-1");
-    return false;
   } else {
     xname.classList.remove("focus:border-black");
     xname.classList.add("border-blue-1");
-    return true;
   }
-  enableButton();
+  return !isEmpty;
 };
 
 const enableButton = () => {
