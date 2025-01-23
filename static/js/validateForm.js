@@ -19,7 +19,13 @@ const validateEmailField = () => {
 
 const validateXnameField = () => {
   xname = Elements.xname;
+
+  if (xname === null) {
+    return true;
+  }
+
   const isEmpty = validator.isEmpty(xname.value);
+
   if (isEmpty) {
     xname.classList.add("focus:border-black");
     xname.classList.remove("border-blue-1");
