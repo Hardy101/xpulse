@@ -10,7 +10,7 @@ class AccountCreationForm(forms.ModelForm):
     label='Email', 
     widget=forms.TextInput(attrs={
         'id': 'email',
-        'class': 'poppins-bold w-full bg-tranparent p-2 outline-none text-md border-[1.4px] rounded-md border-blue-1 text-xs',
+        'class': 'poppins-bold w-full bg-tranparent p-2 outline-none text-md border-[1.4px] border-gray-faded rounded-md focus:border-black text-xs',
         'placeholder': 'Email',  # Add the placeholder attribute
         'required': True         # Add the required attribute
     })

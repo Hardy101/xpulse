@@ -4,17 +4,35 @@
   <div class="py-10 px-8 md:px-32">
     <div class="posts-body mt-4">
       <form
-        action="{% url 'home' %}"
+        action="{% url 'register' %}"
         method="post"
-        class="md:w-1/2 rounded-2xl bs-1 p-4 mx-auto flex flex-col gap-4 poppins-bold"
+        class="md:w-1/2 rounded-2xl bs-1 p-4 mx-auto poppins-bold"
       >
         {% csrf_token %}
-        <div class="analytics-header grid">
+        <div class="analytics-header grid mb-4">
           <img src="{% static 'icons/logo.png' %}" class="w-16" alt="logo" />
           <h1 class="text-2xl col-span-2 mt-4">Get Started</h1>
         </div>
-        <div class="form-control poppins-medium">{{form.email}}</div>
-        <div class="form-control poppins-medium">{{form.x_handle}}</div>
+        <div class="form-control poppins-medium mb-4">{{form.email}}</div>
+        <div class="form-control poppins-medium text-xs mb-4">
+          {% if form.email.errors %}
+          <ul class="errorlist">
+            {% for error in form.email.errors %}
+            <li class="text-red-500 poppins-bold">{{ error }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        <div class="form-control poppins-medium mb-4">{{form.x_handle}}</div>
+        <div class="form-control poppins-medium text-xs mb-4">
+          {% if form.x_handle.errors %}
+          <ul class="errorlist">
+            {% for error in form.x_handle.errors %}
+            <li class="text-red-500 poppins-bold">{{ error }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
         <div class="form-control">
           <button
             disabled="true"
