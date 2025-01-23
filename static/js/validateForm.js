@@ -3,27 +3,56 @@ const Elements = {
   xname: document.getElementById("xname"),
   submitbtn: document.getElementById("submitbtn"),
 };
+
 const validateEmailField = () => {
-  return validator.isEmail(Elements.email.value);
+  const isValid = validator.isEmail(Elements.email.value);
+
+  if (isValid) {
+    Elements.email.classList.add("border-blue-1");
+    Elements.email.classList.remove("focus:border-black");
+  } else {
+    Elements.email.classList.add("border-blue-1");
+  }
+  return isValid;
 };
+
+const validateXnameField = () => {
+  xname = Elements.xname;
+  const isEmpty = validator.isEmpty(xname.value);
+  if (isEmpty) {
+    xname.classList.add("focus:border-black");
+    xname.classList.remove("border-blue-1");
+    return false;
+  } else {
+    xname.classList.remove("focus:border-black");
+    xname.classList.add("border-blue-1");
+    return true;
+  }
+  enableButton();
+};
+
 const enableButton = () => {
   const btn = Elements.submitbtn;
-  const isValid = validateEmailField();
+  const isValid = validateEmailField() && validateXnameField();
 
   if (isValid) {
     btn.disabled = !isValid;
     btn.classList.toggle("disabled:cursor-not-allowed");
     btn.classList.add("bg-blue-1");
     btn.classList.remove("bg-gray-bold");
-    Elements.email.classList.add("border-blue-1");
-    Elements.email.classList.remove("focus:border-black");
   } else {
     btn.disabled = !isValid;
     btn.classList.add("disabled:cursor-not-allowed");
     btn.classList.remove("bg-blue-1");
     btn.classList.add("bg-gray-bold");
-    Elements.email.classList.add("border-blue-1");
   }
 };
 
-Elements.email.addEventListener("input", enableButton);
+Elements.email.addEventListener("input", () => {
+  validateEmailField();
+  enableButton();
+});
+Elements.xname.addEventListener("input", () => {
+  validateXnameField();
+  enableButton();
+});
