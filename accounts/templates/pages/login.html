@@ -11,7 +11,7 @@
         {% csrf_token %}
         <div class="analytics-header mb-4">
           <h1 class="mt-4 flex gap-2 text-2xl">
-            <span>Get Started with</span>
+            <span>Log in to</span>
             <p class="flex">
               <img src="{% static 'icons/logo.png' %}" class="w-8" alt="logo" />
               <span class="text-blue-1">Pulse</span>
@@ -32,16 +32,6 @@
           </ul>
           {% endif %}
         </div>
-        <div class="form-control poppins-medium mb-4">{{form.x_handle}}</div>
-        <div class="form-control poppins-medium text-xs mb-4">
-          {% if form.x_handle.errors %}
-          <ul class="errorlist">
-            {% for error in form.x_handle.errors %}
-            <li class="text-red-500 poppins-bold">{{ error }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %}
-        </div>
         <div class="form-control mb-8">
           <button
             disabled="true"
@@ -54,11 +44,9 @@
         </div>
         <div class="form-control poppins-regular text-center">
           <p>
-            Already have an account?
-            <a
-              href="{% url 'login' %}"
-              class="text-blue-1 poppins-bold underline"
-              >Sign In</a
+            Don't have an account?
+            <a href="#" class="text-blue-1 poppins-bold underline"
+              >Create one</a
             >
           </p>
         </div>

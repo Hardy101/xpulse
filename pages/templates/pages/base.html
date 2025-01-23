@@ -25,6 +25,7 @@
   </head>
   <body>
     <main>
+      {% if user.is_authenticated %}
       <!-- Dropdown for sm devices -->
       <div
         id="dropdown"
@@ -84,6 +85,7 @@
           </li>
         </ul>
       </div>
+      {% endif %}
       <nav class="border-b relative z-10">
         <div class="px-8 md:px-16 py-4">
           <!-- Navigation for sm devices -->
@@ -93,14 +95,28 @@
                 ><img src="{% static 'icons/logo.png' %}" class="w-8"
               /></a>
             </li>
-            <button id="dropdownbtn">
-              <img
-                src="{% static 'icons/menu.png' %}"
-                class="w-8 my-auto"
-                alt="menu icon"
-              />
-            </button>
+            {% if user.is_authenticated %}
+            <li>
+              <button id="dropdownbtn">
+                <img
+                  src="{% static 'icons/menu.png' %}"
+                  class="w-8 my-auto"
+                  alt="menu icon"
+                />
+              </button>
+            </li>
+
+            {% else %}
+            <li class="my-auto">
+              <a
+                href="{% url 'register' %}"
+                class="flex bg-blue-100 poppins-bold text-xs text-blue-500 px-4 py-1 rounded-2xl"
+                >Register</a
+              >
+            </li>
+            {% endif %}
           </ul>
+          {% if user.is_authenticated %}
           <!-- Navigation for lg devices -->
           <ul class="hidden md:flex gap-4 text-xs poppins-medium">
             <li class="grow my-auto flex">
@@ -148,14 +164,35 @@
                 New Post
               </a>
             </li>
-            <li>
+            <li class="flex gap-2">
               <img
                 src="{% static 'icons/p-1.jpg' %}"
-                class="w-8 h-8 rounded-full"
+                class="w-8 h-8 rounded-full my-auto"
                 alt="account image"
               />
+              <a
+                href="{% url 'logout' %}"
+                class="bg-red-100 text-red-500 px-4 py-1 rounded-2xl my-auto"
+                >Log out</a
+              >
             </li>
           </ul>
+          {% else %}
+          <ul class="hidden md:flex gap-4 text-xs poppins-medium">
+            <li class="grow my-auto flex">
+              <a href="{% url 'home' %}">
+                <img src="{% static 'icons/logo.png' %}" class="w-8" />
+              </a>
+            </li>
+            <li class="my-auto">
+              <a
+                href="{% url 'register' %}"
+                class="bg-blue-100 text-blue-500 px-4 py-1 rounded-2xl"
+                >Register</a
+              >
+            </li>
+          </ul>
+          {% endif %}
         </div>
       </nav>
 
