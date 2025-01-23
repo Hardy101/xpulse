@@ -2,7 +2,7 @@
 {%endblock %} {% block section %}
 <section>
   <div class="px-8 md:px-32">
-    <div class="grid grid-cols-2 gap-8 auth-body mt-4">
+    <div class="grid md:grid-cols-2 gap-8 auth-body mt-4">
       <form
         action="{% url 'register' %}"
         method="post"
@@ -55,7 +55,7 @@
           </p>
         </div>
       </form>
-      <div>
+      <div class="hidden md:grid">
         <img src="{% static 'icons/manage.jpg' %}" alt="" />
       </div>
     </div>
